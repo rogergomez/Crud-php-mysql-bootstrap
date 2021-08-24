@@ -1,0 +1,34 @@
+create database crud;
+use crud;
+
+create table persona(
+  codigo int auto_increment primary key,
+  nombre varchar(100),
+  edad int,
+  signo varchar(20)
+);
+
+INSERT INTO persona(nombre, edad, signo) VALUES 
+('Roger Gómez','34','Leo'),
+('Ruth Tarqui','22','Piscis'),
+('Antonio Torres','5','Acuario')
+
+*************
+
+<?php 
+$contrasena = "";
+$usuario = "root";
+$nombre_bd = "demo1";
+
+try {
+	$bd = new PDO (
+		'mysql:host=localhost;
+		dbname='.$nombre_bd,
+		$usuario,
+		$contrasena,
+		array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+	);
+} catch (Exception $e) {
+	echo "Problema con la conexion: ".$e->getMessage();
+}
+?>
