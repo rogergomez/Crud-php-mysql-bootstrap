@@ -18,7 +18,7 @@ INSERT INTO persona(nombre, edad, signo) VALUES
 <?php 
 $contrasena = "";
 $usuario = "root";
-$nombre_bd = "demo1";
+$nombre_bd = "crud";
 
 try {
 	$bd = new PDO (
